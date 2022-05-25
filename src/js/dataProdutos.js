@@ -1,37 +1,58 @@
 const produtos = [
-    {
-        nome: 'Banana',
-        preco: 2,
-        secao: 'Hortifruti',
-        categoria: 'fruta',
-        img: "./src/img/banana.png"
-    },
-    {
-        nome: 'Morango',
-        preco: 2,
-        secao: 'Hortifruti',
-        categoria: 'fruta',
-        img: './src/img/morango.png'
-    },
-    {
-        nome: 'Maçã',
-        preco: 2,
-        secao: 'Hortifruti',
-        categoria: 'fruta',
-        img: './src/img/maça.png'
-    },
-    {
-        nome: 'Pão',
-        preco: 4,
-        secao: 'Panificadora',
-        categoria: 'Pães',
-        img: './src/img/pao.png'
-    },
-    {
-        nome: 'Leite',
-        preco: 5,
-        secao: 'Laticínio',
-        categoria: 'Leite',
-        img: './src/img/leite.png'
-    }
-]
+  {
+    nome: "Banana",
+    preco: 2,
+    secao: "Hortifruti",
+    categoria: "fruta",
+    img: "./src/img/banana.png",
+  },
+  {
+    nome: "Yorgut de Morango",
+    preco: 2,
+    secao: "Laticínio",
+    categoria: "fruta",
+    img: "./src/img/morango.png",
+  },
+  {
+    nome: "Maçã",
+    preco: 2,
+    secao: "Hortifruti",
+    categoria: "fruta",
+    img: "./src/img/maca.png",
+  },
+  {
+    nome: "Pão",
+    preco: 4,
+    secao: "Panificadora",
+    categoria: "Pães",
+    img: "./src/img/pao.png",
+  },
+  {
+    nome: "Leite",
+    preco: 5,
+    secao: "Laticínio",
+    categoria: "Leite",
+    img: "./src/img/leite.png",
+  },
+  {
+    nome: "Torta de Morango",
+    preco: 10,
+    secao: "Panificadora",
+    categoria: "Torta",
+    img: "./src/img/tortamorango.png",
+  },
+  {
+    nome: "Bolo",
+    preco: 20,
+    secao: "Panificadora",
+    categoria: "Bolo",
+    img: "./src/img/bolo.png",
+  },
+  {
+    nome: "Torta de Maçã",
+    preco: 18,
+    secao: "Panificadora",
+    categoria: "Torta",
+    img: "./src/img/tortamaca.png",
+  },
+];

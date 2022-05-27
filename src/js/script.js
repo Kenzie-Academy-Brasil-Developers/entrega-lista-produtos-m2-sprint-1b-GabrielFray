@@ -11,7 +11,7 @@ function criarCard(product) {
   preco.innerText = product.secao;
   paragrafo.innerText = `R$${product.preco}.00`;
 
-  lista.append(imagem, nome, preco, paragrafo );
+  lista.append(imagem, nome, preco, paragrafo);
 
   return lista;
 }
@@ -30,11 +30,9 @@ function barraDePesquisa() {
     ".estiloGeralBotoes--botaoBuscaPorNome"
   );
   const inputSearch = document.querySelector(".campoBuscaPorNome");
-  buttonPesquisar.addEventListener("click", (event) => {
-    const inputFilter = produtos.filter(
-      (element) =>
-        element.nome.toLowerCase() == inputSearch.value.toLowerCase() ||
-        element.categoria.toLowerCase() == inputSearch.value.toLowerCase()
+  buttonPesquisar.addEventListener("click", () => {
+    const inputFilter = produtos.filter((element) =>
+      element.nome.toLowerCase().includes(inputSearch.value.toLowerCase())
     );
     renderizarCard(inputFilter);
     criarTotal(inputFilter);

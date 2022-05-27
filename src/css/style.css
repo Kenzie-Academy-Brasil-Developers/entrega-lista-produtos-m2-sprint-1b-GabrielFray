@@ -68,19 +68,19 @@ h1 {
   height: 52px;
 }
 
-.estiloGeralBotoes--filtrarHortifruti:hover {
+.estiloGeralBotoes--filtrarHortifruti:focus {
   color: #ffffff;
   background-color: #12b886;
 }
-.estiloGeralBotoes--filtrarPanificadora:hover {
+.estiloGeralBotoes--filtrarPanificadora:focus {
   color: #ffffff;
   background-color: #12b886;
 }
-.estiloGeralBotoes--filtrarLaticinios:hover {
+.estiloGeralBotoes--filtrarLaticinios:focus {
   color: #ffffff;
   background-color: #12b886;
 }
-.estiloGeralBotoes--mostrarTodos:hover {
+.estiloGeralBotoes--mostrarTodos:focus {
   color: #ffffff;
   background-color: #12b886;
 }

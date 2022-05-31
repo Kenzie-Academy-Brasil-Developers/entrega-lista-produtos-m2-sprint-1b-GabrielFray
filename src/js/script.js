@@ -4,16 +4,37 @@ function criarCard(product) {
   const nome = document.createElement("h3");
   const paragrafo = document.createElement("p");
   const preco = document.createElement("span");
+  const btnAdd = document.createElement("button");
 
   imagem.src = product.img;
   imagem.alt = product.nome;
   nome.innerText = product.nome;
   preco.innerText = product.secao;
-  paragrafo.innerText = `R$${product.preco}.00`;
+  paragrafo.innerText = `R$${product.preco}`;
+  btnAdd.innerText = "Comprar";
 
-  lista.append(imagem, nome, preco, paragrafo);
+  btnAdd.classList.add("btnAddCart");
+  btnAdd.id = `${product.id - 1}`;
+
+  lista.append(
+    imagem,
+    nome,
+    preco,
+    createCardList(product.componentes),
+    paragrafo,
+    btnAdd
+  );
 
   return lista;
+}
+function createCardList(createListVita) {
+  const ol = document.createElement("ol");
+  for (let i = 0; i < createListVita.length; i++) {
+    const li = document.createElement("li");
+    li.innerText = `${i + 1}:${createListVita[i]}`;
+    ol.append(li);
+  }
+  return ol;
 }
 
 function renderizarCard(productsArray) {
@@ -95,6 +116,62 @@ function criarTotal(precoTotal) {
   const valorTotal = document.querySelector("#precoTotal");
   valorTotal.innerText = `R$ ${price}.00`;
 }
+
+function criarCarrinho() {}
+
+// let carrinho = [];
+// addEventListener("click", (event) => {
+//   const clickTarget = event.target;
+//   if (clickTarget.className === "btn-add") {
+//     carrinho.push(data[Number(clickTarget.id - 1)]);
+//     cart.innerHTML = "";
+//     carrinho.map((element, index) => {
+//       createCart(element, index);
+//     });
+//   }
+//   if (clickTarget.className === "btn-remove") {
+//     carrinho.splice(Number(clickTarget.id - 1), 1);
+//     cart.innerHTML = "";
+//     carrinho.map((element, index) => {
+//       createCart(element, index);
+//     });
+//   }
+//   if (carrinho.length > 0) {
+//     const price = carrinho.reduce((acc, adedonha) => {
+//       return acc + adedonha.value;
+//     }, 0);
+//     const total = document.querySelector(".emptyTotal");
+//     total.innerHTML = "";
+//     total.insertAdjacentHTML(
+//       "beforeend",
+//       `<div class="total">
+//       <p>Quantidade: <span>${carrinho.length}</span></p>
+//       <p>Total: <span>R$${price}.00</span></p>
+//       </div>
+//       `
+//     );
+//   }
+//   if (carrinho.length === 0) {
+//     const total = document.querySelector(".emptyTotal");
+//     total.innerHTML = "";
+//     cart.innerHTML = "";
+//     cart.insertAdjacentHTML(
+//       "beforeend",
+//       `
+//       <img class="img-cart" src="img/logo-bigorna.svg" alt="" />
+//       <p>Adicione suas espadas</p>
+//       `
+//     );
+//   }
+// });
+// cart.insertAdjacentHTML(
+//   "beforeend",
+//   `
+//   <img class="img-cart" src="img/logo-bigorna.svg" alt="" />
+//   <p>Adicione suas espadas</p>
+
+//   `
+// );
 
 function chamadaDasFuncoes() {
   renderizarCard(produtos);

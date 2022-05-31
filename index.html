@@ -11,14 +11,13 @@
     />
     <link rel="stylesheet" href="./src/css/reset.css" />
     <link rel="stylesheet" href="./src/css/style.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <title>Lista de Produtos</title>
   </head>
   <body>
     <!-- CABEÇALHO -->
     <h1>Shop Now</h1>
-    <header></header>
-
-    <main>
+    <header>
       <div id="filters" class="filtersContainer">
         <button class="estiloGeralBotoes estiloGeralBotoes--mostrarTodos">
           Mostrar Todos
@@ -43,22 +42,45 @@
           <button
             class="estiloGeralBotoes estiloGeralBotoes--botaoBuscaPorNome"
           >
-            <img src="" alt="" />
+            <img src="src/img/search.png" alt="" />
           </button>
         </div>
       </div>
-      <section>
-        <div class="containerPrecoTotal">
-          <img src="src/img/alert-circle.png" alt="" />
-          <p>Valor total dos produtos da sessão selecionada</p>
-          <span id="precoTotal"></span>
+    </header>
+    <div class="vitrine">
+      <main>
+        <section>
+          <div class="containerListaProdutos" id="listProdutos">
+            <ul></ul>
+          </div>
+        </section>
+      </main>
+      <aside class="carrinho">
+        <div>
+          <h3 class="titulo--card">
+            <img src="src/img/carrinho.png" alt="" />Carrinho
+          </h3>
         </div>
-        <div class="containerListaProdutos" id="listProdutos">
-          <ul></ul>
+        <section class="cart">
+          <div class="card--carrinho">
+            <img src="src/img/banana.png" alt="" />
+            <div class="card--infos">
+              <h3>Banana</h3>
+              <p>Hortifruti</p>
+              <span>2,00</span>
+            </div>
+            <button class="cart--lixeira">
+              <img src="src/img/Group 1033.png" alt="" />
+            </button>
+          </div>
+        </section>
+        <div class="emptyTotal"></div>
+        <div class="value--total">
+          <p>Quantidade:<span>1</span></p>
+          <p>Total:<span>2.00</span></p>
         </div>
-      </section>
-    </main>
-
+      </aside>
+    </div>
     <script src="src/js/dataProdutos.js"></script>
     <script src="src/js/script.js"></script>
   </body>

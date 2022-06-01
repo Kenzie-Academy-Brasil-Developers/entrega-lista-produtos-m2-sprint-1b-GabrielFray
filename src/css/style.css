@@ -16,9 +16,18 @@ h1 {
   line-height: 50px;
   color: #212529;
 }
-.filtersContainer {
+header {
+  width: 1554px;
+  margin: 0 auto;
+}
+nav {
+  width: 45%;
   display: flex;
   justify-content: space-between;
+  margin: 0 auto;
+}
+.filtersContainer {
+  display: flex;
   align-items: center;
   padding: 30px;
   width: 100%;
@@ -87,6 +96,9 @@ h1 {
 .containerBuscaPorNome {
   display: flex;
   justify-content: space-between;
+  position: relative;
+  top: 0px;
+  left: 135px;
 }
 
 .campoBuscaPorNome {
@@ -96,7 +108,7 @@ h1 {
   border: none;
   height: 52px;
   width: 250px;
-  margin-left: 160px;
+  
 }
 .estiloGeralBotoes--botaoBuscaPorNome {
   background-color: #12b886;
@@ -204,7 +216,6 @@ aside {
   width: 291px;
   height: 627px;
   box-shadow: 0px 4px 30px -10px rgba(0, 0, 0, 0.117);
-
 }
 .titulo--card {
   background-color: #12b886;
@@ -227,7 +238,6 @@ aside {
   height: 83px;
   box-shadow: 0px 4px 30px -10px rgba(0, 0, 0, 0.117);
   border-radius: 8px;
-
 }
 .card--infos {
   width: 60%;
@@ -282,7 +292,6 @@ aside {
   flex-direction: column;
   justify-content: space-between;
   box-shadow: 0px 4px 30px -10px rgba(0, 0, 0, 0.117);
-  
 }
 .value--total p {
   display: flex;

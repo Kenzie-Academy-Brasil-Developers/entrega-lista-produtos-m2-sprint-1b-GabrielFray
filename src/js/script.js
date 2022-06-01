@@ -57,7 +57,7 @@ function barraDePesquisa() {
       element.nome.toLowerCase().includes(inputSearch.value.toLowerCase())
     );
     renderizarCard(inputFilter);
-    criarTotal(inputFilter);
+    // criarTotal(inputFilter);
   });
 }
 
@@ -70,7 +70,7 @@ function btnHortifruti() {
       return produto.secao === "Hortifruti";
     });
     renderizarCard(listaHortifruti);
-    criarTotal(listaHortifruti);
+    // criarTotal(listaHortifruti);
   });
 }
 
@@ -83,7 +83,7 @@ function btnPanificadora() {
       return produto.secao === "Panificadora";
     });
     renderizarCard(listaPanificadora);
-    criarTotal(listaPanificadora);
+    // criarTotal(listaPanificadora);
   });
 }
 
@@ -96,7 +96,7 @@ function btnLaticinios() {
       return produto.secao === "Laticínio";
     });
     renderizarCard(listaLaticinios);
-    criarTotal(listaLaticinios);
+    // criarTotal(listaLaticinios);
   });
 }
 
@@ -106,17 +106,17 @@ function btnMostarTudo() {
   );
   btnMostrarTodos.addEventListener("click", () => {
     renderizarCard(produtos);
-    criarTotal(produtos);
+    // criarTotal(produtos);
   });
 }
 
-function criarTotal(precoTotal) {
-  const price = precoTotal.reduce((element, obj) => {
-    return element + obj.preco;
-  }, 0);
-  const valorTotal = document.querySelector("#precoTotal");
-  valorTotal.innerText = `R$ ${price}.00`;
-}
+// function criarTotal(precoTotal) {
+//   const price = precoTotal.reduce((element, obj) => {
+//     return element + obj.preco;
+//   }, 0);
+//   const valorTotal = document.querySelector("#precoTotal");
+//   valorTotal.innerText = `R$ ${price}.00`;
+// }
 
 // let carrinho = [];
 // addEventListener("click", (event) => {
@@ -174,7 +174,7 @@ function criarTotal(precoTotal) {
 
 function chamadaDasFuncoes() {
   renderizarCard(produtos);
-  criarTotal(produtos);
+  // criarTotal(produtos);
   btnMostarTudo();
   btnHortifruti();
   btnLaticinios();

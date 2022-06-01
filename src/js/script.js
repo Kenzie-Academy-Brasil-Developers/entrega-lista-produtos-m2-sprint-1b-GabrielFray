@@ -13,6 +13,7 @@ function criarCard(product) {
   paragrafo.innerText = `R$${product.preco}`;
   btnAdd.innerText = "Comprar";
 
+  lista.classList.add("listCards");
   btnAdd.classList.add("btnAddCart");
   btnAdd.id = `${product.id - 1}`;
 
@@ -116,8 +117,6 @@ function criarTotal(precoTotal) {
   const valorTotal = document.querySelector("#precoTotal");
   valorTotal.innerText = `R$ ${price}.00`;
 }
-
-function criarCarrinho() {}
 
 // let carrinho = [];
 // addEventListener("click", (event) => {

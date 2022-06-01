@@ -149,7 +149,7 @@ main section {
   color: #868e96;
 }
 
-.containerListaProdutos ul li:hover {
+.listCards:hover {
   box-shadow: 3px 3px 13px 1px rgb(146 146 146);
 }
 
@@ -170,7 +170,6 @@ main section {
   font-size: 12px;
   line-height: 16px;
   color: black;
-
 }
 .containerListaProdutos ul li span {
   margin: 10px 0 10px 10px;
@@ -202,7 +201,10 @@ main section {
 
 /* ASIDE */
 aside {
-  background-color: #212529;
+  width: 291px;
+  height: 627px;
+  box-shadow: 0px 4px 30px -10px rgba(0, 0, 0, 0.117);
+
 }
 .titulo--card {
   background-color: #12b886;
@@ -215,16 +217,17 @@ aside {
   width: 70px;
   height: 70px;
   border-radius: 8px;
-  margin-left: 2px;
-
+  margin-left: 5px;
 }
-aside .card--carrinho {
+.card--carrinho {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   height: 83px;
-  background-color: aqua;
+  box-shadow: 0px 4px 30px -10px rgba(0, 0, 0, 0.117);
+  border-radius: 8px;
+
 }
 .card--infos {
   width: 60%;
@@ -240,12 +243,14 @@ aside .card--carrinho {
 }
 .card--infos p {
   font-weight: 500;
-  font-size: 12px;
-  color: #868e96;
+  font-size: 14px;
+  color: #212529;
 }
 
 .card--infos span {
-  display: flex;
+  font-weight: 500;
+  font-size: 12px;
+  color: #000000;
 }
 .titulo--card img {
   margin: 15px;
@@ -268,12 +273,27 @@ aside .card--carrinho {
   border: none;
   position: relative;
   top: -27px;
-  left: -9px;
+  left: -15px;
 }
 /* PREÇO TOTAL */
 
-.value--total{
+.value--total {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0px 4px 30px -10px rgba(0, 0, 0, 0.117);
   
+}
+.value--total p {
+  display: flex;
+  justify-content: space-between;
+  height: 59px;
+  align-items: center;
+  padding: 5px;
+  font-weight: 500;
+  color: black;
+  font-size: 12px;
+}
+.container--quantidade {
+  background-color: #f8f9fa;
 }

@@ -237,7 +237,7 @@ main section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 95%;
+  width: 96%;
   height: 83px;
   margin: 0px 0px 15px 5px;
   box-shadow: 0px 4px 30px -10px rgba(0, 0, 0, 0.117);
@@ -255,7 +255,7 @@ main section {
   border-radius: 50px;
   border: 3px solid transparent;
 }
-.cardt--infos {
+.card--infos {
   width: 60%;
   display: flex;
   flex-direction: column;

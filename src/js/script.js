@@ -10,7 +10,7 @@ function criarCard(product) {
   imagem.alt = product.nome;
   nome.innerText = product.nome;
   preco.innerText = product.secao;
-  paragrafo.innerText = `R$${product.preco}`;
+  paragrafo.innerText = `R$${product.preco}.00`;
   btnAdd.innerText = "Comprar";
 
   lista.classList.add("listCards");
@@ -57,7 +57,6 @@ function barraDePesquisa() {
       element.nome.toLowerCase().includes(inputSearch.value.toLowerCase())
     );
     renderizarCard(inputFilter);
-    // criarTotal(inputFilter);
   });
 }
 
@@ -70,7 +69,6 @@ function btnHortifruti() {
       return produto.secao === "Hortifruti";
     });
     renderizarCard(listaHortifruti);
-    // criarTotal(listaHortifruti);
   });
 }
 
@@ -83,7 +81,6 @@ function btnPanificadora() {
       return produto.secao === "Panificadora";
     });
     renderizarCard(listaPanificadora);
-    // criarTotal(listaPanificadora);
   });
 }
 
@@ -96,7 +93,6 @@ function btnLaticinios() {
       return produto.secao === "Laticínio";
     });
     renderizarCard(listaLaticinios);
-    // criarTotal(listaLaticinios);
   });
 }
 
@@ -106,17 +102,9 @@ function btnMostarTudo() {
   );
   btnMostrarTodos.addEventListener("click", () => {
     renderizarCard(produtos);
-    // criarTotal(produtos);
   });
 }
 
-// function criarTotal(precoTotal) {
-//   const price = precoTotal.reduce((element, obj) => {
-//     return element + obj.preco;
-//   }, 0);
-//   const valorTotal = document.querySelector("#precoTotal");
-//   valorTotal.innerText = `R$ ${price}.00`;
-// }
 function criarProdutoCart(item) {
   const cart = document.querySelector(".cart");
 
@@ -132,7 +120,7 @@ function criarProdutoCart(item) {
   imgCart.alt = item.nome;
   tituloCart.innerText = item.nome;
   paragrafoCart.innerText = item.secao;
-  precoCart.innerText = `R$${item.preco}`;
+  precoCart.innerText = `R$${item.preco}.00`;
 
   liCart.classList.add("card--carrinho");
   divCartInfos.classList.add("card--infos");
@@ -154,47 +142,48 @@ function renderizarCarrinho(productsArray) {
   });
 }
 
-let carrinho = [];
-addEventListener("click", (event) => {
-  const clickTarget = event.target;
-  if (clickTarget.className === "btnAddCart") {
-    carrinho.push(produtos[Number(clickTarget.id)]);
-    renderizarCarrinho(carrinho);
-  }
-  if (clickTarget.className === "cart--lixeira") {
-    carrinho.splice(Number(clickTarget.id), 1);
-    renderizarCarrinho(carrinho);
-  }
-  if (carrinho.length > 0) {
-    const price = carrinho.reduce((acc, atual) => {
-      return acc + atual.value;
-    }, 0);
-    const total = document.querySelector(".value--total");
-    total.innerHTML = "";
-    total.insertAdjacentHTML(
-      "beforeend",
-      `<div class="value--total">
-      <p class="container--quantidade">
-        <span>Quantidade:</span><span>1</span>
-      </p>
-      <p><span>Total:</span><span>2.00</span></p>
-    </div>
-      `
-    );
-  }
-  if (carrinho.length === 0) {
-    const total = document.querySelector(".emptyTotal");
-    total.innerHTML = "";
-    cart.innerHTML = "";
-    cart.insertAdjacentHTML(
-      "beforeend",
-      `
-      <img class="img-cart" src="img/logo-bigorna.svg" alt="" />
-      <p>Adicione suas espadas</p>
-      `
-    );
-  }
-});
+const valueTotal = document.querySelector(".section--total");
+const carrinhoVazio = document.querySelector(".emptyTotal");
+
+function carrinhoEventos() {
+  let carrinho = [];
+  addEventListener("click", (event) => {
+    const cartLista = document.querySelector(".cart");
+
+    const clickTarget = event.target;
+    if (clickTarget.className === "btnAddCart") {
+      carrinho.push(produtos[Number(clickTarget.id)]);
+      renderizarCarrinho(carrinho);
+    }
+    if (clickTarget.className === "cart--lixeira") {
+      carrinho.splice(Number(clickTarget.id), 1);
+      renderizarCarrinho(carrinho);
+    }
+    if (carrinho.length > 0) {
+      valueTotal.classList.remove("remover");
+      carrinhoVazio.classList.add("remover");
+
+      criarValorTotal(carrinho);
+    }
+    if (carrinho.length === 0) {
+      cartLista.innerHTML = "";
+      valueTotal.classList.add("remover");
+      carrinhoVazio.classList.remove("remover");
+    }
+  });
+}
+
+function criarValorTotal(itemCarrinho) {
+  const totalQuantidade = document.querySelector("#totalQuantidade");
+  const totalPreco = document.querySelector("#totalPreco");
+
+  const carrinho = itemCarrinho.reduce(
+    (acc, element) => acc + element.preco,
+    0
+  );
+  totalQuantidade.innerText = itemCarrinho.length;
+  totalPreco.innerText = `R$${carrinho}.00`;
+}
 
 function chamadaDasFuncoes() {
   renderizarCard(produtos);
@@ -203,5 +192,6 @@ function chamadaDasFuncoes() {
   btnLaticinios();
   btnPanificadora();
   barraDePesquisa();
+  carrinhoEventos();
 }
 chamadaDasFuncoes();

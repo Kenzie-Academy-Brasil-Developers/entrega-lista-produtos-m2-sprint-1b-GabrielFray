@@ -2,7 +2,7 @@ const produtos = [
   {
     id: 1,
     nome: "Banana",
-    preco: "2.00",
+    preco: 2.00,
     secao: "Hortifruti",
     categoria: "fruta",
     img: "./src/img/banana.png",
@@ -13,7 +13,7 @@ const produtos = [
   {
     id: 2,
     nome: "Yogurt Morango",
-    preco: "6.00",
+    preco: 6.00,
     secao: "Laticínio",
     categoria: "fruta",
     img: "./src/img/morango.png",
@@ -24,7 +24,7 @@ const produtos = [
   {
     id: 3,
     nome: "Maçã",
-    preco: "2.00",
+    preco: 2.00,
     secao: "Hortifruti",
     categoria: "fruta",
     img: "./src/img/maca.png",
@@ -35,7 +35,7 @@ const produtos = [
   {
     id: 4,
     nome: "Pão",
-    preco: "4.00",
+    preco: 4.00,
     secao: "Panificadora",
     categoria: "Pães",
     img: "./src/img/pao.png",
@@ -46,18 +46,18 @@ const produtos = [
   {
     id: 5,
     nome: "Leite",
-    preco: "5.00",
+    preco: 5.00,
     secao: "Laticínio",
     categoria: "Leite",
     img: "./src/img/leite.png",
     promocao: false,
     precoPromocao: "1.00",
-    componentes: ["Carboidratos", "Proteínas", "Gorduras totais"],
+    componentes: ["Carboidratos", "Proteínas", "Gorduras totais", "Cálcio"],
   },
   {
     id: 6,
     nome: "Torta de Morango",
-    preco: "10.0",
+    preco: 10.00,
     secao: "Panificadora",
     categoria: "Torta",
     img: "./src/img/tortamorango.png",
@@ -68,7 +68,7 @@ const produtos = [
   {
     id: 7,
     nome: "Bolo",
-    preco: "20.0",
+    preco: 20.0,
     secao: "Panificadora",
     categoria: "Bolo",
     img: "./src/img/bolo.png",
@@ -79,7 +79,7 @@ const produtos = [
   {
     id: 8,
     nome: "Torta de Maçã",
-    preco: "18.0",
+    preco: 18.00,
     secao: "Panificadora",
     categoria: "Torta",
     img: "./src/img/tortamaca.png",

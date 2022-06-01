@@ -203,19 +203,18 @@ main section {
   left: 198px;
   cursor: pointer;
 }
+
+/* ASIDE */
+
 .carrinho {
   width: 292.09px;
-  height: 583.68px;
+  height: 268.25px;
+  box-shadow: 0px 4px 30px -10px rgba(0, 0, 0, 0.117);
+  border-radius: 0px 0px 8px 8px;
+
 }
 .carrinho section {
   width: 100%;
-}
-
-/* ASIDE */
-aside {
-  width: 291px;
-  height: 627px;
-  box-shadow: 0px 4px 30px -10px rgba(0, 0, 0, 0.117);
 }
 .titulo--card {
   background-color: #12b886;
@@ -223,6 +222,11 @@ aside {
   font-weight: 500;
   font-size: 16px;
   margin-bottom: 16px;
+}
+.cart {
+  overflow-y: scroll;
+  width: 100%;
+  max-height: 500px;
 }
 .card--carrinho img {
   width: 70px;
@@ -277,7 +281,6 @@ aside {
   align-items: center;
   border-radius: 8px 8px 0px 0px;
 }
-
 .cart--lixeira {
   cursor: pointer;
   width: 23.62px;
@@ -290,6 +293,21 @@ aside {
   background-image: url(../img/lixo.png);
   background-repeat: no-repeat;
   background-size: contain;
+}
+.emptyTotal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #868e96;
+  height: 60%;
+  gap: 35px;
+}
+.textoCarrinhoVazio {
+  text-align: center;
+}
+.remover {
+  display: none;
 }
 /* PREÇO TOTAL */
 

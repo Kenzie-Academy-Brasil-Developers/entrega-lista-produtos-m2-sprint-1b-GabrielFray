@@ -55,6 +55,7 @@ const produtos = [
     componentes: ["Carboidratos", "Proteínas", "Gorduras totais"],
   },
   {
+    id: 6,
     nome: "Torta de Morango",
     preco: "10.0",
     secao: "Panificadora",
@@ -65,6 +66,7 @@ const produtos = [
     componentes: ["Fibras", "Vitamina C", "Cálcio", "Ferro"],
   },
   {
+    id: 7,
     nome: "Bolo",
     preco: "20.0",
     secao: "Panificadora",
@@ -75,6 +77,7 @@ const produtos = [
     componentes: ["Carboidratos", "Proteínas", "Gorduras totais", "Ferro"],
   },
   {
+    id: 8,
     nome: "Torta de Maçã",
     preco: "18.0",
     secao: "Panificadora",

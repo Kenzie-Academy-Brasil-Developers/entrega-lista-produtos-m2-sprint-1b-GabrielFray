@@ -117,7 +117,7 @@ function btnMostarTudo() {
 //   const valorTotal = document.querySelector("#precoTotal");
 //   valorTotal.innerText = `R$ ${price}.00`;
 // }
-function criarProdutoCart(itens) {
+function criarProdutoCart(item) {
   const cart = document.querySelector(".cart");
 
   const liCart = document.createElement("li");
@@ -127,16 +127,12 @@ function criarProdutoCart(itens) {
   const paragrafoCart = document.createElement("p");
   const precoCart = document.createElement("span");
   const btnLixeira = document.createElement("button");
-  const imgLixeira = document.createElement("img");
 
-  imgCart.src = itens.img;
-  console.log(itens.img);
-  imgCart.alt = itens.nome;
-  console.log(itens.nome);
-  tituloCart.innerText = itens.nome;
-  paragrafoCart.innerText = itens.secao;
-  precoCart.innerText = `R$${itens.preco}`;
-  imgLixeira.src = "src/img/Group 1033.png";
+  imgCart.src = item.img;
+  imgCart.alt = item.nome;
+  tituloCart.innerText = item.nome;
+  paragrafoCart.innerText = item.secao;
+  precoCart.innerText = `R$${item.preco}`;
 
   liCart.classList.add("card--carrinho");
   divCartInfos.classList.add("card--infos");
@@ -146,69 +142,62 @@ function criarProdutoCart(itens) {
 
   liCart.append(imgCart, divCartInfos, btnLixeira);
   divCartInfos.append(tituloCart, paragrafoCart, precoCart);
-  btnLixeira.append(imgLixeira);
 
   return cart;
 }
-criarProdutoCart(produtos);
 
 function renderizarCarrinho(productsArray) {
   const cartLista = document.querySelector(".cart");
+  cartLista.innerHTML = "";
   productsArray.forEach((element) => {
-    const productsList = criarProdutoCart(element);
-    cartLista.append(productsList);
+    criarProdutoCart(element);
   });
 }
-renderizarCarrinho(produtos);
 
 let carrinho = [];
 addEventListener("click", (event) => {
   const clickTarget = event.target;
   if (clickTarget.className === "btnAddCart") {
-    carrinho.push(produtos[Number(clickTarget.id - 1)]);
-    carrinho.map((element, index) => {
-      renderizarCarrinho(element, index);
-    });
+    carrinho.push(produtos[Number(clickTarget.id)]);
+    renderizarCarrinho(carrinho);
   }
-  // if (clickTarget.className === "btn-remove") {
-  //   carrinho.splice(Number(clickTarget.id - 1), 1);
-  //   cart.innerHTML = "";
-  //   carrinho.map((element, index) => {
-  //     createCart(element, index);
-  //   });
-  // }
-  // if (carrinho.length > 0) {
-  //   const price = carrinho.reduce((acc, adedonha) => {
-  //     return acc + adedonha.value;
-  //   }, 0);
-  //   const total = document.querySelector(".emptyTotal");
-  //   total.innerHTML = "";
-  //   total.insertAdjacentHTML(
-  //     "beforeend",
-  //     `<div class="total">
-  //     <p>Quantidade: <span>${carrinho.length}</span></p>
-  //     <p>Total: <span>R$${price}.00</span></p>
-  //     </div>
-  //     `
-  //   );
-  // }
-  // if (carrinho.length === 0) {
-  //   const total = document.querySelector(".emptyTotal");
-  //   total.innerHTML = "";
-  //   cart.innerHTML = "";
-  //   cart.insertAdjacentHTML(
-  //     "beforeend",
-  //     `
-  //     <img class="img-cart" src="img/logo-bigorna.svg" alt="" />
-  //     <p>Adicione suas espadas</p>
-  //     `
-  //   );
-  // }
+  if (clickTarget.className === "cart--lixeira") {
+    carrinho.splice(Number(clickTarget.id), 1);
+    renderizarCarrinho(carrinho);
+  }
+  if (carrinho.length > 0) {
+    const price = carrinho.reduce((acc, atual) => {
+      return acc + atual.value;
+    }, 0);
+    const total = document.querySelector(".value--total");
+    total.innerHTML = "";
+    total.insertAdjacentHTML(
+      "beforeend",
+      `<div class="value--total">
+      <p class="container--quantidade">
+        <span>Quantidade:</span><span>1</span>
+      </p>
+      <p><span>Total:</span><span>2.00</span></p>
+    </div>
+      `
+    );
+  }
+  if (carrinho.length === 0) {
+    const total = document.querySelector(".emptyTotal");
+    total.innerHTML = "";
+    cart.innerHTML = "";
+    cart.insertAdjacentHTML(
+      "beforeend",
+      `
+      <img class="img-cart" src="img/logo-bigorna.svg" alt="" />
+      <p>Adicione suas espadas</p>
+      `
+    );
+  }
 });
 
 function chamadaDasFuncoes() {
   renderizarCard(produtos);
-  // criarTotal(produtos);
   btnMostarTudo();
   btnHortifruti();
   btnLaticinios();

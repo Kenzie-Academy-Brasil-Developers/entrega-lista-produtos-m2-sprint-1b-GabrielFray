@@ -24,7 +24,6 @@ nav {
   width: 45%;
   display: flex;
   justify-content: space-between;
-  margin: 0 auto;
 }
 .filtersContainer {
   display: flex;
@@ -42,9 +41,9 @@ nav {
   cursor: pointer;
   display: block;
   font-size: 0.9rem;
+  margin-left: 15px;
 }
-
-.estiloGeralBotoes--mostrarTodos {
+.estiloGeralBotoes {
   color: #12b886;
   background: rgba(18, 184, 134, 0.05);
   border: 1.5px solid rgba(18, 184, 134, 0.05);
@@ -52,44 +51,10 @@ nav {
   width: 177px;
   height: 52px;
 }
-.estiloGeralBotoes--filtrarHortifruti {
-  background: rgba(18, 184, 134, 0.05);
-  border: 1.5px solid rgba(18, 184, 134, 0.05);
-  border-radius: 8px;
-  color: #12b886;
-  width: 122px;
-  height: 52px;
+.estiloGeralBotoes--botaoBuscaPorNome {
+  width: 59px;
 }
-.estiloGeralBotoes--filtrarPanificadora {
-  background: rgba(18, 184, 134, 0.05);
-  border: 1.5px solid rgba(18, 184, 134, 0.05);
-  border-radius: 8px;
-  color: #12b886;
-  width: 155px;
-  height: 52px;
-}
-.estiloGeralBotoes--filtrarLaticinios {
-  background: rgba(18, 184, 134, 0.05);
-  border: 1.5px solid rgba(18, 184, 134, 0.05);
-  border-radius: 8px;
-  color: #12b886;
-  width: 128px;
-  height: 52px;
-}
-
-.estiloGeralBotoes--filtrarHortifruti:focus {
-  color: #ffffff;
-  background-color: #12b886;
-}
-.estiloGeralBotoes--filtrarPanificadora:focus {
-  color: #ffffff;
-  background-color: #12b886;
-}
-.estiloGeralBotoes--filtrarLaticinios:focus {
-  color: #ffffff;
-  background-color: #12b886;
-}
-.estiloGeralBotoes--mostrarTodos:focus {
+.estiloGeralBotoes:focus {
   color: #ffffff;
   background-color: #12b886;
 }
@@ -98,9 +63,8 @@ nav {
   justify-content: space-between;
   position: relative;
   top: 0px;
-  left: 135px;
+  left: 610px;
 }
-
 .campoBuscaPorNome {
   background-color: #f1f3f5;
   border-radius: 8px;
@@ -132,16 +96,13 @@ main {
 main section {
   width: 1171px;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
 }
-
 .containerListaProdutos ul {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
 }
-
 .containerListaProdutos ul li {
   color: black;
   font-weight: bold;
@@ -152,29 +113,25 @@ main section {
   width: 272px;
   height: 339px;
 }
-
 .containerListaProdutos ol li {
   font-weight: 400;
   font-size: 12px;
   height: 10px;
   color: #868e96;
+  margin-left: 15px;
 }
-
 .listCards:hover {
   box-shadow: 3px 3px 13px 1px rgb(146 146 146);
 }
-
 .containerListaProdutos ul li img {
   width: 100%;
   height: 175px;
 }
-
 .containerListaProdutos ul li h3 {
   margin: 10px 0px 0px 10px;
   font-weight: 500;
   font-size: 16px;
 }
-
 .containerListaProdutos ul li p {
   margin: 10px 0 5px 10px;
   font-weight: 400;
@@ -203,14 +160,17 @@ main section {
   left: 198px;
   cursor: pointer;
 }
-
+.btnAddCart:hover {
+  color: #ffffff;
+  background-color: #12b886;
+}
 /* ASIDE */
-
 .carrinho {
   width: 292.09px;
   height: 268.25px;
   box-shadow: 0px 4px 30px -10px rgba(0, 0, 0, 0.117);
   border-radius: 0px 0px 8px 8px;
+  margin-top: 10px;
 }
 .carrinho section {
   width: 100%;
@@ -226,6 +186,14 @@ main section {
   overflow-y: scroll;
   width: 100%;
   max-height: 500px;
+}
+.cart::-webkit-scrollbar {
+  width: 7px;
+}
+.cart::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 50px;
+  border: 3px solid transparent;
 }
 .card--carrinho img {
   width: 70px;
@@ -247,14 +215,6 @@ main section {
   box-shadow: 3px 3px 13px 1px rgb(146 146 146);
   cursor: pointer;
 }
-.cart::-webkit-scrollbar {
-  width: 7px;
-}
-.cart::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 50px;
-  border: 3px solid transparent;
-}
 .card--infos {
   width: 60%;
   display: flex;
@@ -272,7 +232,6 @@ main section {
   font-size: 14px;
   color: #212529;
 }
-
 .card--infos span {
   font-weight: 500;
   font-size: 12px;
@@ -317,12 +276,10 @@ main section {
   display: none;
 }
 /* PREÇO TOTAL */
-
 .value--total {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0px 4px 30px -10px rgba(0, 0, 0, 0.117);
 }
 .value--total p {
   display: flex;

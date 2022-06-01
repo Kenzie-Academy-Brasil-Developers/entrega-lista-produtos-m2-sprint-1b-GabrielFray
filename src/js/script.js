@@ -53,8 +53,13 @@ function barraDePesquisa() {
   );
   const inputSearch = document.querySelector(".campoBuscaPorNome");
   buttonPesquisar.addEventListener("click", () => {
-    const inputFilter = produtos.filter((element) =>
-      element.nome.toLowerCase().includes(inputSearch.value.toLowerCase())
+    const inputFilter = produtos.filter(
+      (element) =>
+        element.nome.toLowerCase().includes(inputSearch.value.toLowerCase()) ||
+        element.secao.toLowerCase().includes(inputSearch.value.toLowerCase()) ||
+        element.categoria
+          .toLowerCase()
+          .includes(inputSearch.value.toLowerCase())
     );
     renderizarCard(inputFilter);
   });
@@ -187,11 +192,11 @@ function criarValorTotal(itemCarrinho) {
 
 function chamadaDasFuncoes() {
   renderizarCard(produtos);
+  barraDePesquisa();
   btnMostarTudo();
   btnHortifruti();
   btnLaticinios();
   btnPanificadora();
-  barraDePesquisa();
   carrinhoEventos();
 }
 chamadaDasFuncoes();
